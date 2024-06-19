@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -45,7 +46,6 @@ public class DialogueManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else if (_instance != this)
         {
@@ -55,9 +55,23 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Start()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject); // Call DontDestroyOnLoad in Start
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Create a method to start the conversation
     public void StartDialogue(DialogueScriptableObject dialogueScriptableObject)
     {
+        
         dialogueAnimator.SetBool("IsOpen", true);
 
         nameText.text = dialogueScriptableObject.characterName;
@@ -86,6 +100,10 @@ public class DialogueManager : MonoBehaviour
             {
                 StartDialogue(currentDialogue.nextDialogue); // Automatically progress to next dialogue
             }
+            else if (currentDialogue.choices != null && currentDialogue.choices.Length > 0)
+            {
+                ShowChoices();
+            }
             else
             {
                 HideDialogueBox();
@@ -111,32 +129,76 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private bool isFirstDialogue = true;  // Flag to track if it's the first dialogue
+
     void ShowChoices()
     {
         choicePanel.SetActive(true);
 
-        foreach (Transform child in choicePanel.transform)
+        if (isFirstDialogue)
         {
-            Destroy(child.gameObject);
+            // Don't destroy buttons on the first dialogue (assuming they're already generated)
+            isFirstDialogue = false;
+        }
+        else
+        {
+            // Destroy existing buttons for subsequent dialogues
+            foreach (Transform child in choicePanel.transform)
+            {
+                Destroy(child.gameObject);
+            }
         }
 
-        foreach (ChoiceScriptableObject choice in currentDialogue.choices)
+        if (currentDialogue.choices != null)
         {
-            Button choiceButton = Instantiate(choiceButtonPrefab, choicePanel.transform);
-            TMP_Text buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+            // Calculate the vertical spacing between buttons
+            float buttonHeight = choiceButtonPrefab.GetComponent<RectTransform>().sizeDelta.y;
+            float verticalSpacing = 20f; // Adjust this value as needed
 
-            if (buttonText != null)
-            {
-                buttonText.text = choice.choiceText;
-            }
-            else
-            {
-                Debug.LogError("TMP_Text component not found in choiceButtonPrefab's children.");
-            }
+            // Start from the bottom of the choicePanel
+            float yPosition = -buttonHeight / 2f;
 
-            choiceButton.onClick.AddListener(() => OnChoiceSelected(choice));
+            foreach (ChoiceScriptableObject choice in currentDialogue.choices)
+            {
+                if (choice != null)
+                {
+                    Button choiceButton = Instantiate(choiceButtonPrefab, choicePanel.transform);
+                    TMP_Text buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+
+                    // Ensure a TMP_Text component exists (check both prefab and children)
+                    if (buttonText == null)
+                    {
+                        buttonText = choiceButton.GetComponent<TMP_Text>();
+                    }
+
+                    if (buttonText != null) // Assign choice text if TMP_Text component is found
+                    {
+                        buttonText.text = choice.choiceText;
+                    }
+                    else
+                    {
+                        Debug.LogError("TMP_Text component not found on the choiceButtonPrefab or its children.");
+                    }
+
+                    choiceButton.onClick.AddListener(() => OnChoiceSelected(choice));
+
+                    // Position the button
+                    RectTransform buttonRectTransform = choiceButton.GetComponent<RectTransform>();
+                    buttonRectTransform.anchoredPosition = new Vector2(0f, yPosition);
+
+                    // Update the position for the next button
+                    yPosition -= buttonHeight + verticalSpacing;
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No choices available in the current dialogue.");
         }
     }
+
+
+
 
     void OnChoiceSelected(ChoiceScriptableObject choice)
     {
