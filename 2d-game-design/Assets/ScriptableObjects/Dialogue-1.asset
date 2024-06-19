@@ -16,5 +16,5 @@ MonoBehaviour:
   sentences:
   - Iris, wake up!
   choices:
-  - {fileID: 11400000, guid: 646ab149eb3315344a47e67e33b2e8de, type: 2}
-  nextDialogue: {fileID: 0}
+  - {fileID: 0}
+  nextDialogue: {fileID: 11400000, guid: 919a149d34fc9c646a7c1a21bde08cd3, type: 2}

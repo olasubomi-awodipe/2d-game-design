@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Iris
   sentences:
-  - thr dd fvjbvrhgbrj
+  - Give me five minutes
   choices: []
-  nextDialogue: {fileID: 0}
+  nextDialogue: {fileID: 11400000, guid: 0ce2c57c6703d874ca3cbbfecc8e71dc, type: 2}

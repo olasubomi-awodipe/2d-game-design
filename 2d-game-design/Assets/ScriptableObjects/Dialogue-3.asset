@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Dialogue-3
   m_EditorClassIdentifier: 
   characterName: Mom
-  sentences: []
+  sentences:
+  - Now, young lady! Or else, you'll miss the bus!
   choices:
   - {fileID: 11400000, guid: 646ab149eb3315344a47e67e33b2e8de, type: 2}
   - {fileID: 11400000, guid: 58ce3b144fedbfd4eade10c3925f9a8a, type: 2}
+  nextDialogue: {fileID: 0}

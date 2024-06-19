@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292c361450876534eba3c8bcaae621c7, type: 3}
   m_Name: Choice-3b
   m_EditorClassIdentifier: 
-  choiceText: 
-  nextDialogue: {fileID: 0}
+  choiceText: Wake up and get ready
+  nextDialogue: {fileID: 11400000, guid: 5a1765f89ab4adb4495d7828ca6bfbe9, type: 2}

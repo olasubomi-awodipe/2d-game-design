@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292c361450876534eba3c8bcaae621c7, type: 3}
   m_Name: Choice-3a
   m_EditorClassIdentifier: 
-  choiceText: Go to sleep
-  nextDialogue: {fileID: 0}
+  choiceText: Spend five more minutes in bed
+  nextDialogue: {fileID: 11400000, guid: 99071f838792082458f03ffd9f666163, type: 2}
