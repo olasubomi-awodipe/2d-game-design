@@ -15,6 +15,10 @@ MonoBehaviour:
   characterName: Mom
   sentences:
   - I told you to be on time for a reason! Now you missed the bus..
-  - She sighs... I can't take you to school so you're going to have to walk today.
+  - She sighs...
+  - I can't take you to school so you're going to have to walk today.
+  - But be home before the street lights come on
+  - '*Mom is upset you missed the bus. She will tell your Dad about missing the bus.*'
+  - '*You remembered your mother''s words*'
   choices: []
   nextDialogue: {fileID: 0}

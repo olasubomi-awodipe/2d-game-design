@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 13
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Iris
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - Oh my gosh It's Misty!
+  - Hey Misty! Long time no see!
+  - '*She sits next to her best friend*'
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: 72a92dc7939657146b8ebcb8fe5fdb40, type: 2}

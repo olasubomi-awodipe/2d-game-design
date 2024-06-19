@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 12
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: ???
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - Oh my gosh! Hey girl! I didn't think we would be going to the same school!
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: 42865478473e6ea4eba8bddc2c0c6080, type: 2}

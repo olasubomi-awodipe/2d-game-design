@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 24
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Misty
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - Looks like we have some time before class.
+  - We should probably head to the office so you can get your schedule.
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: 0b31e60a4b3c418488abff0ac0b61427, type: 2}

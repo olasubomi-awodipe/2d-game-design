@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 7B
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Iris
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - 'Woah really?! She''s gonna be on the bus? '
+  - Maybe this school won't be so bad
+  - '*Your relationship with your Mom improved*'
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: fcba6acf5225b2d419e99e4b22ed8024, type: 2}

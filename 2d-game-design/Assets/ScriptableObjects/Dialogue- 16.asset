@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 16
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Misty
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - Yo momma ain't tel you this school white?
+  - and not diversewhite just predominately white
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: 007c55340ba8bd947a1eca9448e97b1d, type: 2}

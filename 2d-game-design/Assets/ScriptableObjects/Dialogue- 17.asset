@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue- 17
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Iris
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - What? Man my momma ain't tell me it was that white...
+  - I would have never moved from Chicago...
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: 8c17cf3bfd0c5064fb01926d90632123, type: 2}

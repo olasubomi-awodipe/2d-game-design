@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
+  m_Name: Dialogue- 20
+  m_EditorClassIdentifier: 
+  characterName: Misty
+  sentences:
+  - Oh that's easy
+  - Make sure to code switch. Them white teacher get so upset whenever we talk in
+    AAVE.
+  - Make sure to not make these white kids too upset
+  - Heard the last time it happened a black boy got expelled despite this one white
+    boy starting shit
+  - And lastly make sure to leave the school on time
+  - Unless you in a club or something, just leave the campus
+  - Cause the police officers can get aggressive with us black students and even
+    other POC students.
+  choices: []
+  nextDialogue: {fileID: 11400000, guid: 378bfb4e40dd24849a8720da6d1bdfac, type: 2}

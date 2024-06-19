@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a60468284077bf540bb6459c125371db, type: 3}
-  m_Name: Dialogue-5
+  m_Name: Dialogue 11
   m_EditorClassIdentifier: 
-  characterName: Mom
+  characterName: Iris
   sentences:
-  - I think your best friend is also taking the bus today too.
-  - Have a great day at school ok?
+  - Damn.. it's nothing but people who don't look like me..
+  - '*She sighs*'
   choices: []
-  nextDialogue: {fileID: 11400000, guid: 1a5935f663b73bd4daf53bacca9d80c9, type: 2}
+  nextDialogue: {fileID: 11400000, guid: f538367dfcb8991448172cfc09fcf30e, type: 2}
