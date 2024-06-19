@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
     // Create a method to start the conversation
     public void StartDialogue(DialogueScriptableObject dialogueScriptableObject)
     {
-        
+
         dialogueAnimator.SetBool("IsOpen", true);
 
         nameText.text = dialogueScriptableObject.characterName;
