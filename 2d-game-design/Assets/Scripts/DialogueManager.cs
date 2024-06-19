@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,6 +17,8 @@ public class DialogueManager : MonoBehaviour
     public Button choiceButtonPrefab;
 
     private Queue<string> sentences;
+    private bool isChoosing;
+
     private DialogueScriptableObject currentDialogue; // Reference to the current dialogue
 
     private static DialogueManager _instance; // Singleton pattern
@@ -66,12 +67,15 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        isChoosing = false;
+        choicePanelAnimator.SetBool("IsOpen", false);
+        choicePanel.SetActive(false);
     }
 
     // Create a method to start the conversation
     public void StartDialogue(DialogueScriptableObject dialogueScriptableObject)
     {
-
         dialogueAnimator.SetBool("IsOpen", true);
 
         nameText.text = dialogueScriptableObject.characterName;
@@ -115,6 +119,9 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+
+        // Ensure the choice panel is closed while displaying sentences
+        CloseChoicePanel();
     }
 
     // Animate the appearance of the letters
@@ -133,7 +140,10 @@ public class DialogueManager : MonoBehaviour
 
     void ShowChoices()
     {
+        isChoosing = true; // Set the flag to indicate choices are being presented
+
         choicePanel.SetActive(true);
+        choicePanelAnimator.SetBool("IsOpen", true); // Open the choice panel
 
         if (isFirstDialogue)
         {
@@ -197,11 +207,28 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void OpenChoicePanel()
+    {
+        choicePanel.SetActive(true); // Activate the panel GameObject
+        choicePanelAnimator.SetBool("IsOpen", true); // Open the choice panel
+    }
 
+    public void CloseChoicePanel()
+    {
+        choicePanelAnimator.SetBool("IsOpen", false); // Close the choice panel
+        StartCoroutine(DeactivateChoicePanel()); // Deactivate the panel GameObject after the animation
+    }
 
+    IEnumerator DeactivateChoicePanel()
+    {
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(choicePanelAnimator.GetCurrentAnimatorStateInfo(0).length);
+        choicePanel.SetActive(false);
+    }
 
     void OnChoiceSelected(ChoiceScriptableObject choice)
     {
+        isChoosing = false; // Reset the flag after a choice is made
         choicePanel.SetActive(false);
         StartDialogue(choice.nextDialogue);
     }
